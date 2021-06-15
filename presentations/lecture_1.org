@@ -1,0 +1,55 @@
+#+TITLE: Introduction to C++
+#+AUTHOR: Lars Nielsen
+#+OPTIONS: toc:nil date:nil
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [table,svgnames,aspectratio=169]
+
+* Agenda
+
+  - Talk Information
+  - Why learn C++?
+  - Data types
+  - References and pointers 
+  - When to use references
+  - STL Collections
+  
+
+* Talk information
+
+- *INSERT NUMBER* talks
+- *INSERT NUMBER* available exercises
+  - With solutions
+- *INSERT NUMBER* Question Session
+
+* Talk information - What languages do you know?
+
+  #+BEGIN_CENTER
+  What programming languages do you know? 
+  #+END_CENTER
+  
+
+* Why learn C++?
+
+  #+BEGIN_CENTER
+  Why learn C++?
+  #+END_CENTER
+
+* Why learn C++
+
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+  - Works every where
+  - Can "simplify" C
+  - It is widely used
+
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+  - C++ is popular
+  - C++ is modern
+  - Allows for both low-level and high-level programming 
