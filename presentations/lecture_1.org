@@ -4,6 +4,7 @@
 #+startup: beamer
 #+LaTeX_CLASS: beamer
 #+LaTeX_CLASS_OPTIONS: [table,svgnames,aspectratio=169]
+#+latex_header: \input{lstsettings}
 
 * Agenda
 
@@ -53,3 +54,279 @@
   - C++ is popular
   - C++ is modern
   - Allows for both low-level and high-level programming 
+
+* Data Types - Numerical
+
+There are multiple numerical data type.
+
+It has its benefits knowing the data types 
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+- \texttt{<cstdint>}
+- Signed 
+- Unsigned
+
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+- int, intN\textunderscore t, long
+- unsigned int, uintN\textunderscore t
+- float, double
+
+
+* Data Types - Numerical
+
+There are multiple numerical data type.
+
+It has its benefits knowing the data types 
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+- \texttt{<cstdint>}
+- Signed 
+- Unsigned
+- N = size in bits
+
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+- int, intN\textunderscore t, long
+- unsigned int, uintN\textunderscore t
+- float, double
+
+
+* Data Types - Numerical
+
+| Data type    | Bits | Bytes | Promised |
+|--------------+------+-------+----------|
+| int          |   32 |     4 | No       |
+| int8\textunderscore t       |    8 |     1 | Yes      |
+| int16\textunderscore t      |   16 |     2 | Yes      |
+| int32\textunderscore t      |   32 |     4 | Yes      |
+| int64\textunderscore t      |   64 |     8 | Yes      |
+|--------------+------+-------+----------|
+| unsigned int |   32 |     4 | No       |
+| uint8\textunderscore t      |    8 |     1 | Yes      |
+| uint16\textunderscore t     |   16 |     2 | Yes      |
+| uint32\textunderscore t     |   32 |     4 | Yes      |
+| uint64\textunderscore t     |   64 |     8 | Yes      |
+
+
+* Data Types - Numerical
+
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+- int / usigned int
+  - Length is platform independent
+  - x86\textunderscore 64 = 4 byte
+  - IoT devices varies from 4 and down 
+
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+| Data type    | Bits | Bytes | Promised |
+|--------------+------+-------+----------|
+| int          |   32 |     4 | No       |
+| int8\textunderscore t       |    8 |     1 | Yes      |
+| int16\textunderscore t      |   16 |     2 | Yes      |
+| int32\textunderscore t      |   32 |     4 | Yes      |
+| int64\textunderscore t      |   64 |     8 | Yes      |
+|--------------+------+-------+----------|
+| unsigned int |   32 |     4 | No       |
+| uint8\textunderscore t      |    8 |     1 | Yes      |
+| uint16\textunderscore t     |   16 |     2 | Yes      |
+| uint32\textunderscore t     |   32 |     4 | Yes      |
+| uint64\textunderscore t     |   64 |     8 | Yes      |
+
+* Data Types - Numerical 
+
+#+BEGIN_SRC c++
+#include <vector>
+
+std::vector<int> data(255); 
+
+for (int i = 0; i < data.size(); ++i)
+{
+    data.at(i) = i;
+}
+#+END_SRC
+
+
+* Data Types - Numerical 
+
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+#+BEGIN_SRC c++
+#include <vector>
+
+std::vector<int> data(255); 
+
+for (int i = 0; i < data.size(); ++i)
+{
+    data.at(i) = i;
+}
+#+END_SRC
+
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+#+BEGIN_SRC c++
+#include <vector>
+
+std::vector<uint8\textunderscore t> data(255); 
+
+for (uint8_t i = 0; i < data.size(); ++i)
+{
+    data.at(i) = i;
+}
+#+END_SRC
+
+
+* Data Types - Numerical 
+
+** Left                                                               :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+#+BEGIN_SRC c++
+#include <vector>
+
+std::vector<int> data(255); 
+
+for (int i = 0; i < data.size(); ++i)
+{
+    data.at(i) = i;
+}
+#+END_SRC
+
+Memory estimate: (1 + 255) * 4 = 1024 = 1kB
+
+** Right                                                              :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :END:
+
+#+BEGIN_SRC c++
+#include <vector>
+
+std::vector<uint8\textunderscore t> data(255); 
+
+for (uint8_t i = 0; i < data.size(); ++i)
+{
+    data.at(i) = i;
+}
+#+END_SRC
+
+Memory estimate: (1 + 255) * 1 = 256 = 0.25kB
+
+* Data Type - Numerical - Loops
+
+#+BEGIN_SRC c++
+#include <cstdint>
+#include <vector>
+
+std::vector<int> data(INT64_MAX);
+
+for (int i = 0; i < data.size(); ++i)
+{
+    data.at(i) = i;
+}
+#+END_SRC
+
+* Data Type - Numerical - Loops
+
+#+BEGIN_SRC c++
+#include <cstdint>
+#include <vector>
+
+std::vector<int> data(INT64_MAX);
+
+for (int i = 0; i < data.size(); ++i)
+{
+    data.at(i) = i;
+}
+#+END_SRC
+
+#+BEGIN_CENTER
+What will go wrong?
+#+END_CENTER
+
+* Data Type - Numerical - Loops
+
+#+BEGIN_SRC c++
+#include <cstdint>
+#include <vector>
+
+std::vector<int> data(INT64_MAX);
+
+for (int i = 0; i < data.size(); ++i)
+{
+    data.at(i) = i;
+}
+#+END_SRC
+
+#+BEGIN_CENTER
+What will go wrong?
+#+END_CENTER
+
+- \texttt{i} will become negative
+- Cause out of range exception 
+
+* Data Types - Numerical - Loops
+- We have a "secret"
+
+* Data Types - Numerical - Loops
+
+- We have a "secret"
+  - Unsigned values 
+  - size\textunderscore t
+
+* Data Types - Numerical - Loops
+
+- We have a "secret"
+  - Unsigned values 
+  - size\textunderscore t
+
+#+BEGIN_SRC c++
+#+BEGIN_SRC c++
+#include <cstdint>
+#include <vector>
+
+std::vector<int> data(INT64_MAX);
+
+for (size_t i = 0; i < data.size(); ++i)
+{
+    data.at(i) = i;
+}
+#+END_SRC
+
+
+* Data Types - Numerical 
+
+#+BEGIN_CENTER
+What did we learn?
+#+END_CENTER
+
+* Data Types - Numerical - What did we learn
+
+- Use a data type that makes sense 
+- The size of the data types matters
+- Don't just throw around the most common data type
